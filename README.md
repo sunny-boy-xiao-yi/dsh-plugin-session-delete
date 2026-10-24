@@ -58,13 +58,13 @@
 3. 在输入框中粘贴本仓库地址：
 
    ```
-   github:<your-github-user>/dsh-plugin-session-delete
+   github:<sunny-boy-xiao-yi>/dsh-plugin-session-delete
    ```
 
    或使用完整 URL：
 
    ```
-   https://github.com/<your-github-user>/dsh-plugin-session-delete
+   https://github.com/<sunny-boy-xiao-yi>/dsh-plugin-session-delete
    ```
 
 4. 点击 **安装**，按提示启用；若提示需要重启，重启应用。
@@ -76,13 +76,13 @@
 > GitHub 安装要求仓库**根目录**就是本插件目录（即 `package.json` 位于仓库根目录），且仓库可公开访问。
 >
 > 默认安装默认分支的最新提交。仓库打了标签后可以固定版本，例如
-> `github:<your-github-user>/dsh-plugin-session-delete#v0.4.1`。
+> `github:<sunny-boy-xiao-yi>/dsh-plugin-session-delete#v0.4.1`。
 > 升级时先在插件管理器中卸载旧版本，再按新地址安装。
 
 ### 方式二：命令行
 
 ```bash
-dsh plugin --profile desktop add github:<your-github-user>/dsh-plugin-session-delete
+dsh plugin --profile desktop add github:<sunny-boy-xiao-yi>/dsh-plugin-session-delete
 ```
 
 > 桌面版内置的 `dsh` CLI 默认不在 PATH 中，桌面用户请优先使用插件管理器。
@@ -195,7 +195,7 @@ node --check lib/client.js
 
 ### 发布到 GitHub 检查清单
 
-1. 将 `<your-github-user>` 替换为实际 GitHub 用户名。
+1. 确认仓库地址中的用户名（`sunny-boy-xiao-yi`）与 README 一致。
 2. 确认 `package.json` 中的 `version` 与本次发布一致（当前 `0.4.1`）。
 3. 推送后打标签：`git tag v0.4.1 && git push --tags`。
 4. 安装示意图位于 `docs/install.png`，可替换为自己的截图。
@@ -228,8 +228,8 @@ node --check lib/client.js
 - No runtime dependencies, no telemetry, and no external network access (it only talks to the host over the app's internal RPC).
 - **Irreversible**: deleted sessions cannot be restored.
 
-In the app, open **Plugins** in the sidebar, click **+ Add plugin**, paste `github:<your-github-user>/dsh-plugin-session-delete`, and click **Install** (see [the screenshot](docs/install.png)). If installation fails, retry once; if it keeps failing, download the repository and install it from its absolute path, or hand the source to an AI tool that has local terminal access.
+In the app, open **Plugins** in the sidebar, click **+ Add plugin**, paste `github:<sunny-boy-xiao-yi>/dsh-plugin-session-delete`, and click **Install** (see [the screenshot](docs/install.png)). If installation fails, retry once; if it keeps failing, download the repository and install it from its absolute path, or hand the source to an AI tool that has local terminal access.
 
-Requirements: a public repository whose root is this plugin, Git installed on the machine, and network access to `github.com` (configure Git's proxy if needed). Pin a release with `#v0.4.1`, for example `github:<your-github-user>/dsh-plugin-session-delete#v0.4.1`. The CLI is not on PATH in the Desktop build, so Desktop users should use the Plugin Manager.
+Requirements: a public repository whose root is this plugin, Git installed on the machine, and network access to `github.com` (configure Git's proxy if needed). Pin a release with `#v0.4.1`, for example `github:<sunny-boy-xiao-yi>/dsh-plugin-session-delete#v0.4.1`. The CLI is not on PATH in the Desktop build, so Desktop users should use the Plugin Manager.
 
 Tested only against **DeepSeek Harness Desktop v0.2.1-rc.2**. Internal APIs may change in future Harness releases.
