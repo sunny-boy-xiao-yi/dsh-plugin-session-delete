@@ -1,0 +1,6 @@
+{
+  "meta": {
+    "title": "Plugin - Delete Session",
+    "description": "Adds a Delete Session action to each conversation's sidebar menu and removes the live session, its local session directory and projection cache."
+  }
+}
