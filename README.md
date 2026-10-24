@@ -53,9 +53,9 @@
 
 ### 方式一：插件管理器（推荐）
 
-1. 打开 **插件管理器**。
-2. 选择 **安装第三方插件**。
-3. 填入本仓库地址：
+1. 左侧栏点击 **插件**。
+2. 点击右上角 **+ 添加插件**。
+3. 在输入框中粘贴本仓库地址：
 
    ```
    github:<your-github-user>/dsh-plugin-session-delete
@@ -67,7 +67,11 @@
    https://github.com/<your-github-user>/dsh-plugin-session-delete
    ```
 
-4. 安装完成后按提示启用，必要时重启应用。
+4. 点击 **安装**，按提示启用；若提示需要重启，重启应用。
+
+<img src="docs/install.png" alt="插件管理器安装示例" width="760">
+
+安装失败时先重试一次；如果持续失败，通常是本机访问 GitHub 或 Git 环境的问题。可以下载仓库源码后改用方式三安装，或把源码交给有本机终端权限的 AI 工具，通过本地目录或内置 CLI 安装。
 
 > GitHub 安装要求仓库**根目录**就是本插件目录（即 `package.json` 位于仓库根目录），且仓库可公开访问。
 >
@@ -83,9 +87,9 @@ dsh plugin --profile desktop add github:<your-github-user>/dsh-plugin-session-de
 
 > 桌面版内置的 `dsh` CLI 默认不在 PATH 中，桌面用户请优先使用插件管理器。
 
-### 方式三：本地目录（开发调试）
+### 方式三：本地目录（开发调试 / GitHub 安装失败时）
 
-在「安装第三方插件」的安装源中填入本目录的**绝对路径**（例如 `E:\plugins\dsh-plugin-session-delete`）。Harness 会以 `link:` 方式引用该目录，修改代码后重载插件或重启应用生效；安装后不要移动或删除该目录。
+在 **+ 添加插件** 的输入框中填入本目录的**绝对路径**（例如 `E:\plugins\dsh-plugin-session-delete`）。Harness 会以 `link:` 方式引用该目录，修改代码后重载插件或重启应用生效；安装后不要移动或删除该目录。
 
 ## 使用
 
@@ -162,6 +166,8 @@ POST /api  sessionTrash/deleteSession  { args: { sessionId } }
 ├── locale/
 │   ├── zh.json         # 插件显示名与描述（中文）
 │   └── en.json         # 插件显示名与描述（英文）
+├── docs/
+│   └── install.png     # 插件管理器安装示意图
 ├── cordis.patch.yml    # 插件装配补丁
 ├── icon.svg            # 插件图标
 ├── package.json
@@ -192,7 +198,7 @@ node --check lib/client.js
 1. 将 `<your-github-user>` 替换为实际 GitHub 用户名。
 2. 确认 `package.json` 中的 `version` 与本次发布一致（当前 `0.4.1`）。
 3. 推送后打标签：`git tag v0.4.1 && git push --tags`。
-4. README 中的示意图可替换为实际截图。
+4. 安装示意图位于 `docs/install.png`，可替换为自己的截图。
 
 ## 版本
 
@@ -222,11 +228,7 @@ node --check lib/client.js
 - No runtime dependencies, no telemetry, and no external network access (it only talks to the host over the app's internal RPC).
 - **Irreversible**: deleted sessions cannot be restored.
 
-Install from the Plugin Manager with `github:<your-github-user>/dsh-plugin-session-delete`, or from the CLI:
-
-```bash
-dsh plugin --profile desktop add github:<your-github-user>/dsh-plugin-session-delete
-```
+In the app, open **Plugins** in the sidebar, click **+ Add plugin**, paste `github:<your-github-user>/dsh-plugin-session-delete`, and click **Install** (see [the screenshot](docs/install.png)). If installation fails, retry once; if it keeps failing, download the repository and install it from its absolute path, or hand the source to an AI tool that has local terminal access.
 
 Requirements: a public repository whose root is this plugin, Git installed on the machine, and network access to `github.com` (configure Git's proxy if needed). Pin a release with `#v0.4.1`, for example `github:<your-github-user>/dsh-plugin-session-delete#v0.4.1`. The CLI is not on PATH in the Desktop build, so Desktop users should use the Plugin Manager.
 
